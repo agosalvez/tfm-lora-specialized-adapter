@@ -50,13 +50,16 @@ tfm-lora-specialized-adapter/
 
 ```bash
 # Instalar LlamaFactory framework
-bash dependencies/setup_llamafactory.sh
+dependencies/llamafactory_setup.md
+// Incluir dataset a entrenar
+// Ajustar configuracion en scripts/traing.sh
 ```
 
 ### 2. Entrenamiento del Adapter
 
 ```bash
 cd scripts
+// Ajustar configuracion en scripts/traing.sh
 chmod +x train.sh
 ./train.sh
 ```
