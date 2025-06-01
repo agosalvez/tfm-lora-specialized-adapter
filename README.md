@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto implementa un sistema de especialización de modelos de lenguaje de gran escala utilizando técnicas de Parameter-Efficient Fine-Tuning (PEFT) mediante LoRA (Low-Rank Adaptation). El sistema procesa documentos académicos multimodales y entrena adapters especializados sobre el modelo base PHI4-mini-instruct.
+Este proyecto implementa un sistema de especialización de modelos de lenguaje de gran escala utilizando técnicas de Parameter-Efficient Fine-Tuning (PEFT) mediante LoRA (Low-Rank Adaptation). El sistema procesa documentos de un dominio concreto multimodales y entrena adapters especializados sobre el modelo base PHI4-mini-instruct.
 
 ## Características Principales
 
