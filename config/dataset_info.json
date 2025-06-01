@@ -1,0 +1,9 @@
+{
+  "magic1": {
+    "file_name": "ds-full.jsonl",
+    "columns": {
+      "prompt": "instruction",
+      "response": "output"
+    }
+  }
+}
