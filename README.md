@@ -82,11 +82,20 @@ El archivo models/lora_adapters/adapter_config.json contiene la configuración u
 #### Dataset
 El archivo config/dataset_config.json define la estructura y parámetros del dataset de entrenamiento.
 
-#### Resultados
-- Reducción de parámetros: De 3.8B a ~18M parámetros entrenables
-- Tamaño del adapter: ~10MB (vs 7.6GB del modelo completo)
-- Tiempo de entrenamiento: Optimizado para completarse en hardware convencional
-- Especialización exitosa: El modelo adquiere conocimiento específico del dominio sin perder capacidades generales
+## Resultados
+- **Reducción de parámetros**: De 3.8B a ~234M parámetros entrenables (6.2% del modelo original)
+- **Configuración LoRA**: Rank=128, Alpha=256, 4 módulos objetivo por capa
+- **Tiempo de entrenamiento**: 21 minutos en GPU T4 (240 steps, 20 epochs)
+- **Tamaño del adapter**: ~10MB (vs 7.6GB del modelo completo)
+- **Convergencia**: Loss redujo de 2.09 a 0.07 durante el entrenamiento
+- **Velocidad**: 2.8 samples/segundo en GPU T4
+- **Especialización exitosa**: El modelo adquiere conocimiento específico del dominio sin perder capacidades generales
+
+### Métricas de Entrenamiento
+- **Train Loss**: 0.198 (promedio final)
+- **Learning Rate**: 0.0005 (constante)
+- **Total FLOPs**: 1.01e+16
+- **Duración**: 1,273 segundos (21:14 minutos)
 
 #### Métricas de Entrenamiento
 Los resultados detallados están disponibles en:
