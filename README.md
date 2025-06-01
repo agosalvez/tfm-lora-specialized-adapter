@@ -19,62 +19,108 @@ Este proyecto implementa un sistema de especialización de modelos de lenguaje d
 - **Dependencias principales**: transformers, peft, torch, docling
 
 ## Estructura del Proyecto
-
-tfm-lora-adapter/
-├── data/                    # Datasets y datos procesados
+```bash
+tfm-lora-specialized-adapter/
+├── data/                           # Datasets y datos procesados
 ├── scripts/
-│   ├── train.sh            # Script de entrenamiento
-│   └── inference.py        # Script de inferencia
-├── models/                  # Adapters entrenados y checkpoints
+│   ├── train.sh                   # Script de entrenamiento
+│   └── inference.py               # Script de inferencia
+├── models/
+│   └── lora_adapters/             # Adapters LoRA entrenados
+│       ├── adapter_config.json   # Configuración del adapter
+│       └── adapter_model.safetensors # Pesos del adapter (~10MB)
 ├── config/
-│   └── dataset_config.json # Configuración del dataset para LoRA
-├── results/                 # Logs y resultados de entrenamiento
+│   ├── dataset_config.json       # Configuración del dataset para LoRA
+│   ├── tokenizer_config.json     # Configuración del tokenizer
+│   └── special_tokens_map.json   # Mapeo de tokens especiales
+├── results/
+│   └── training_logs/             # Logs y métricas de entrenamiento
+│       ├── trainer_log.jsonl     # Log detallado del entrenamiento
+│       ├── trainer_state.json    # Estado final del entrenador
+│       ├── train_results.json    # Resultados de entrenamiento
+│       └── all_results.json      # Métricas completas
+├── dependencies/                   # Framework y dependencias
+│   ├── llamafactory_setup.md     # Configuración LlamaFactory
+│   └── requirements_llamafactory.txt # Dependencias específicas
 └── README.md
-
+```
 ## Uso Rápido
 
-### 1. Entrenamiento del Adapter
+### 1. Configuración del entorno
+
+```bash
+# Instalar LlamaFactory framework
+bash dependencies/setup_llamafactory.sh
+```
+
+### 2. Entrenamiento del Adapter
 
 ```bash
 cd scripts
 chmod +x train.sh
 ./train.sh
+```
 
-### 2. Inferencia con Adapter Especializado
+### 3. Inferencia con Adapter Especializado
 
+```bash
 cd scripts
 python inference.py
+```
+### Configuración
+#### Parámetros LoRA
+El archivo models/lora_adapters/adapter_config.json contiene la configuración utilizada:
 
-## Configuración
+- Rank (r): Dimensión de las matrices de bajo rango
+- Alpha: Factor de escala para las actualizaciones
+- Target modules: Capas del transformer adaptadas
+- Learning rate: Tasa de aprendizaje específica para adapters
 
-El archivo config/dataset_config.json contiene los parámetros de configuración para el entrenamiento LoRA:
+#### Dataset
+El archivo config/dataset_config.json define la estructura y parámetros del dataset de entrenamiento.
 
-- **Rank (r)**: Dimensión de las matrices de bajo rango
-- **Alpha**: Factor de escala para las actualizaciones
-- **Target modules**: Capas del transformer a adaptar
-- **Learning rate**: Tasa de aprendizaje específica para adapters
+#### Resultados
+- Reducción de parámetros: De 3.8B a ~18M parámetros entrenables
+- Tamaño del adapter: ~10MB (vs 7.6GB del modelo completo)
+- Tiempo de entrenamiento: Optimizado para completarse en hardware convencional
+- Especialización exitosa: El modelo adquiere conocimiento específico del dominio sin perder capacidades generales
 
-## Resultados
+#### Métricas de Entrenamiento
+Los resultados detallados están disponibles en:
 
-- **Reducción de parámetros**: De 3.8B a ~18M parámetros entrenables
-- **Tiempo de entrenamiento**: Optimizado para completarse en hardware convencional
-- **Especialización exitosa**: El modelo adquiere conocimiento específico del dominio sin perder capacidades generales
+- results/training_logs/train_results.json - Métricas finales
+- results/training_logs/trainer_log.jsonl - Log completo del proceso
+- results/training_logs/all_results.json - Todas las métricas registradas
 
-## Metodología
+#### Metodología
 
-1. **Extracción de datos**: Procesamiento multimodal de documentos académicos con Docling
-2. **Preparación del dataset**: Estructuración de datos para entrenamiento LoRA
-3. **Entrenamiento**: Fine-tuning eficiente mediante adapters de bajo rango
-4. **Evaluación**: Validación de conocimiento especializado adquirido
+- Extracción de datos: Procesamiento multimodal de documentos académicos con Docling
+- Preparación del dataset: Estructuración de datos para entrenamiento LoRA
+- Entrenamiento: Fine-tuning eficiente mediante adapters de bajo rango usando LlamaFactory
+- Evaluación: Validación de conocimiento especializado adquirido
 
-## Contexto Académico
+#### Archivos No Incluidos
+Por limitaciones de tamaño, los siguientes archivos no están en el repositorio:
 
+- Checkpoints intermedios (~8GB) - Disponibles bajo solicitud
+- Dataset original completo - Derivado de documentos académicos específicos
+- Logs de entrenamiento completos - Solo métricas esenciales incluidas
+
+El adapter entrenado final está disponible en models/lora_adapters/ y es completamente funcional para inferencia.
+
+#### Frameworks y Dependencias
+*LlamaFactory*
+
+- Repositorio: https://github.com/hiyouga/LLaMA-Factory
+- Uso: Framework principal para entrenamiento LoRA
+- Paper: LlamaFactory: [Unified Efficient Fine-Tuning of 100+ Language Models](https://doi.org/10.48550/arXiv.2403.13372)
+- Instalación: [README.md from LLamaFactory](https://github.com/hiyouga/LLaMA-Factory/blob/main/README.md)
+
+### Contexto Académico
 Este proyecto forma parte de un Trabajo de Fin de Máster en Inteligencia Artificial, enfocado en la democratización del fine-tuning de modelos de lenguaje de gran escala mediante técnicas parameter-efficient.
-
-## Licencia
-
+### Licencia
 MIT License - Ver archivo LICENSE para más detalles.
-
-## Autor
-
+### Autor
 Desarrollado por Adrián Gosálvez como Trabajo de Fin de Máster en Inteligencia Artificial.
+
+Para más detalles técnicos, consultar la documentación del proyecto y el código fuente.
