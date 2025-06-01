@@ -1,0 +1,2375 @@
+nohup: ignoring input
+2025-05-28 16:36:36.758691: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1748450196.782070   34559 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1748450196.789089   34559 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1748450196.807179   34559 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1748450196.807239   34559 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1748450196.807244   34559 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1748450196.807248   34559 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-05-28 16:36:36.812491: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[INFO|2025-05-28 16:36:40] llamafactory.hparams.parser:401 >> Process rank: 0, world size: 1, device: cuda:0, distributed training: False, compute dtype: torch.float16
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:40,552 >> loading file vocab.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/vocab.json
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:40,552 >> loading file merges.txt from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/merges.txt
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:40,552 >> loading file tokenizer.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/tokenizer.json
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:40,552 >> loading file added_tokens.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/added_tokens.json
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:40,553 >> loading file special_tokens_map.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/special_tokens_map.json
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:40,553 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:40,553 >> loading file chat_template.jinja from cache at None
+[INFO|tokenization_utils_base.py:2299] 2025-05-28 16:36:41,281 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:698] 2025-05-28 16:36:41,916 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:36:41,919 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:42,119 >> loading file vocab.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/vocab.json
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:42,119 >> loading file merges.txt from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/merges.txt
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:42,119 >> loading file tokenizer.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/tokenizer.json
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:42,119 >> loading file added_tokens.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/added_tokens.json
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:42,119 >> loading file special_tokens_map.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/special_tokens_map.json
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:42,119 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2023] 2025-05-28 16:36:42,119 >> loading file chat_template.jinja from cache at None
+[INFO|tokenization_utils_base.py:2299] 2025-05-28 16:36:42,888 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|2025-05-28 16:36:42] llamafactory.data.loader:143 >> Loading dataset ds-full.jsonl...
+[INFO|configuration_utils.py:698] 2025-05-28 16:36:43,590 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:36:43,592 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+training example:
+input_ids:
+[48426, 25, 4614, 382, 71350, 82534, 289, 306, 290, 3814, 328, 19745, 326, 11256, 8684, 30, 199999, 198, 91655, 25, 38, 14770, 82534, 289, 30795, 316, 290, 46487, 1919, 448, 180461, 8684, 665, 413, 27203, 41421, 11, 12951, 1952, 14188, 11, 656, 1919, 3613, 4445, 382, 29908, 13, 730, 19745, 11, 3284, 13747, 98997, 1199, 1043, 71350, 9262, 316, 72564, 177379, 8684, 11, 4784, 80098, 480, 15256, 1919, 1023, 1682, 1373, 316, 1631, 503, 4694, 37135, 289, 480, 4194, 591, 12383, 10370, 484, 2804, 12760, 94447, 13, 199999, 198]
+inputs:
+Human: What is gaze cueing in the context of magic and visual attention?<|endoftext|>
+Assistant:Gaze cueing refers to the phenomenon where an individual's attention can be strongly influenced, perhaps even automatically, by where another individual is attending. In magic, magicians strategically use their gaze direction to manipulate spectator attention, either directing it toward where they want them to look or misdirecting it away from critical actions that must remain concealed.<|endoftext|>
+
+label_ids:
+[-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 38, 14770, 82534, 289, 30795, 316, 290, 46487, 1919, 448, 180461, 8684, 665, 413, 27203, 41421, 11, 12951, 1952, 14188, 11, 656, 1919, 3613, 4445, 382, 29908, 13, 730, 19745, 11, 3284, 13747, 98997, 1199, 1043, 71350, 9262, 316, 72564, 177379, 8684, 11, 4784, 80098, 480, 15256, 1919, 1023, 1682, 1373, 316, 1631, 503, 4694, 37135, 289, 480, 4194, 591, 12383, 10370, 484, 2804, 12760, 94447, 13, 199999, 198]
+labels:
+Gaze cueing refers to the phenomenon where an individual's attention can be strongly influenced, perhaps even automatically, by where another individual is attending. In magic, magicians strategically use their gaze direction to manipulate spectator attention, either directing it toward where they want them to look or misdirecting it away from critical actions that must remain concealed.<|endoftext|>
+
+[INFO|2025-05-28 16:36:43] llamafactory.model.model_utils.kv_cache:143 >> KV cache is disabled during training.
+[INFO|modeling_utils.py:1149] 2025-05-28 16:36:43,854 >> loading weights file model.safetensors from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/model.safetensors.index.json
+[INFO|modeling_utils.py:2239] 2025-05-28 16:36:43,854 >> Instantiating Phi3ForCausalLM model under default dtype torch.float16.
+[INFO|configuration_utils.py:1135] 2025-05-28 16:36:43,857 >> Generate config GenerationConfig {
+  "bos_token_id": 199999,
+  "eos_token_id": 199999,
+  "pad_token_id": 199999,
+  "use_cache": false
+}
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.52s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.13s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.19s/it]
+[INFO|modeling_utils.py:5170] 2025-05-28 16:36:46,276 >> All model checkpoint weights were used when initializing Phi3ForCausalLM.
+
+[INFO|modeling_utils.py:5178] 2025-05-28 16:36:46,276 >> All the weights of Phi3ForCausalLM were initialized from the model checkpoint at microsoft/Phi-4-mini-instruct.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use Phi3ForCausalLM for predictions without further training.
+[INFO|configuration_utils.py:1090] 2025-05-28 16:36:46,383 >> loading configuration file generation_config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/generation_config.json
+[INFO|configuration_utils.py:1135] 2025-05-28 16:36:46,383 >> Generate config GenerationConfig {
+  "bos_token_id": 199999,
+  "eos_token_id": [
+    200020,
+    199999
+  ],
+  "pad_token_id": 199999
+}
+
+[INFO|2025-05-28 16:36:46] llamafactory.model.model_utils.checkpointing:143 >> Gradient checkpointing enabled.
+[INFO|2025-05-28 16:36:46] llamafactory.model.model_utils.attention:143 >> Using torch SDPA for faster training and inference.
+[INFO|2025-05-28 16:36:46] llamafactory.model.adapter:143 >> Upcasting trainable params to float32.
+[INFO|2025-05-28 16:36:46] llamafactory.model.adapter:143 >> Fine-tuning method: LoRA
+[INFO|2025-05-28 16:36:46] llamafactory.model.model_utils.misc:143 >> Found linear modules: o_proj,qkv_proj,gate_up_proj,down_proj
+[INFO|2025-05-28 16:36:48] llamafactory.model.loader:143 >> trainable params: 184,549,376 || all params: 4,020,571,136 || trainable%: 4.5901
+[INFO|trainer.py:756] 2025-05-28 16:36:48,698 >> Using auto half precision backend
+[INFO|trainer.py:2409] 2025-05-28 16:36:49,102 >> ***** Running training *****
+[INFO|trainer.py:2410] 2025-05-28 16:36:49,102 >>   Num examples = 180
+[INFO|trainer.py:2411] 2025-05-28 16:36:49,102 >>   Num Epochs = 20
+[INFO|trainer.py:2412] 2025-05-28 16:36:49,102 >>   Instantaneous batch size per device = 1
+[INFO|trainer.py:2415] 2025-05-28 16:36:49,102 >>   Total train batch size (w. parallel, distributed & accumulation) = 16
+[INFO|trainer.py:2416] 2025-05-28 16:36:49,102 >>   Gradient Accumulation steps = 16
+[INFO|trainer.py:2417] 2025-05-28 16:36:49,102 >>   Total optimization steps = 240
+[INFO|trainer.py:2418] 2025-05-28 16:36:49,106 >>   Number of trainable parameters = 184,549,376
+  0%|          | 0/240 [00:00<?, ?it/s]  0%|          | 1/240 [00:05<22:04,  5.54s/it]  1%|          | 2/240 [00:10<20:28,  5.16s/it]  1%|▏         | 3/240 [00:15<20:27,  5.18s/it]  2%|▏         | 4/240 [00:20<20:09,  5.13s/it]  2%|▏         | 5/240 [00:25<20:09,  5.15s/it]                                                 2%|▏         | 5/240 [00:25<20:09,  5.15s/it]  2%|▎         | 6/240 [00:31<20:13,  5.19s/it]  3%|▎         | 7/240 [00:36<20:17,  5.22s/it]  3%|▎         | 8/240 [00:41<20:01,  5.18s/it]  4%|▍         | 9/240 [00:46<20:13,  5.25s/it]  4%|▍         | 10/240 [00:52<20:00,  5.22s/it]                                                  4%|▍         | 10/240 [00:52<20:00,  5.22s/it]  5%|▍         | 11/240 [00:57<19:54,  5.21s/it]  5%|▌         | 12/240 [00:58<15:33,  4.09s/it]  5%|▌         | 13/240 [01:04<17:06,  4.52s/it]  6%|▌         | 14/240 [01:09<18:01,  4.79s/it]  6%|▋         | 15/240 [01:15<18:34,  4.95s/it]                                                  6%|▋         | 15/240 [01:15<18:34,  4.95s/it]  7%|▋         | 16/240 [01:20<19:01,  5.09s/it]  7%|▋         | 17/240 [01:25<19:19,  5.20s/it]  8%|▊         | 18/240 [01:31<19:31,  5.28s/it]  8%|▊         | 19/240 [01:36<19:32,  5.31s/it]  8%|▊         | 20/240 [01:42<19:28,  5.31s/it]                                                  8%|▊         | 20/240 [01:42<19:28,  5.31s/it][INFO|trainer.py:3993] 2025-05-28 16:38:31,241 >> Saving model checkpoint to ./lora-phi4-magic1/checkpoint-20
+[INFO|configuration_utils.py:698] 2025-05-28 16:38:31,487 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:38:31,488 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2356] 2025-05-28 16:38:32,808 >> chat template saved in ./lora-phi4-magic1/checkpoint-20/chat_template.jinja
+[INFO|tokenization_utils_base.py:2525] 2025-05-28 16:38:32,808 >> tokenizer config file saved in ./lora-phi4-magic1/checkpoint-20/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2534] 2025-05-28 16:38:32,809 >> Special tokens file saved in ./lora-phi4-magic1/checkpoint-20/special_tokens_map.json
+  9%|▉         | 21/240 [01:49<21:54,  6.00s/it]  9%|▉         | 22/240 [01:55<21:09,  5.82s/it] 10%|▉         | 23/240 [02:00<20:33,  5.68s/it] 10%|█         | 24/240 [02:01<15:46,  4.38s/it] 10%|█         | 25/240 [02:07<16:59,  4.74s/it]                                                 10%|█         | 25/240 [02:07<16:59,  4.74s/it] 11%|█         | 26/240 [02:12<17:47,  4.99s/it] 11%|█▏        | 27/240 [02:18<18:06,  5.10s/it] 12%|█▏        | 28/240 [02:24<18:52,  5.34s/it] 12%|█▏        | 29/240 [02:30<19:16,  5.48s/it] 12%|█▎        | 30/240 [02:35<18:58,  5.42s/it]                                                 12%|█▎        | 30/240 [02:35<18:58,  5.42s/it] 13%|█▎        | 31/240 [02:40<19:02,  5.47s/it] 13%|█▎        | 32/240 [02:46<19:25,  5.60s/it] 14%|█▍        | 33/240 [02:52<19:08,  5.55s/it] 14%|█▍        | 34/240 [02:57<18:59,  5.53s/it] 15%|█▍        | 35/240 [03:03<19:00,  5.56s/it]                                                 15%|█▍        | 35/240 [03:03<19:00,  5.56s/it] 15%|█▌        | 36/240 [03:04<14:42,  4.33s/it] 15%|█▌        | 37/240 [03:10<15:36,  4.61s/it] 16%|█▌        | 38/240 [03:15<16:29,  4.90s/it] 16%|█▋        | 39/240 [03:21<17:10,  5.12s/it] 17%|█▋        | 40/240 [03:26<17:31,  5.26s/it]                                                 17%|█▋        | 40/240 [03:26<17:31,  5.26s/it][INFO|trainer.py:3993] 2025-05-28 16:40:16,012 >> Saving model checkpoint to ./lora-phi4-magic1/checkpoint-40
+[INFO|configuration_utils.py:698] 2025-05-28 16:40:16,238 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:40:16,239 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2356] 2025-05-28 16:40:17,492 >> chat template saved in ./lora-phi4-magic1/checkpoint-40/chat_template.jinja
+[INFO|tokenization_utils_base.py:2525] 2025-05-28 16:40:17,493 >> tokenizer config file saved in ./lora-phi4-magic1/checkpoint-40/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2534] 2025-05-28 16:40:17,493 >> Special tokens file saved in ./lora-phi4-magic1/checkpoint-40/special_tokens_map.json
+ 17%|█▋        | 41/240 [03:34<19:52,  5.99s/it] 18%|█▊        | 42/240 [03:40<19:18,  5.85s/it] 18%|█▊        | 43/240 [03:45<18:43,  5.70s/it] 18%|█▊        | 44/240 [03:51<18:30,  5.67s/it] 19%|█▉        | 45/240 [03:56<18:36,  5.73s/it]                                                 19%|█▉        | 45/240 [03:56<18:36,  5.73s/it] 19%|█▉        | 46/240 [04:02<18:34,  5.74s/it] 20%|█▉        | 47/240 [04:08<18:13,  5.67s/it] 20%|██        | 48/240 [04:09<14:09,  4.42s/it] 20%|██        | 49/240 [04:15<15:12,  4.78s/it] 21%|██        | 50/240 [04:21<16:06,  5.09s/it]                                                 21%|██        | 50/240 [04:21<16:06,  5.09s/it] 21%|██▏       | 51/240 [04:26<16:13,  5.15s/it] 22%|██▏       | 52/240 [04:31<16:33,  5.29s/it] 22%|██▏       | 53/240 [04:37<16:49,  5.40s/it] 22%|██▎       | 54/240 [04:43<16:53,  5.45s/it] 23%|██▎       | 55/240 [04:48<16:49,  5.46s/it]                                                 23%|██▎       | 55/240 [04:48<16:49,  5.46s/it] 23%|██▎       | 56/240 [04:54<17:00,  5.55s/it] 24%|██▍       | 57/240 [05:00<16:57,  5.56s/it] 24%|██▍       | 58/240 [05:05<16:47,  5.53s/it] 25%|██▍       | 59/240 [05:11<16:41,  5.54s/it] 25%|██▌       | 60/240 [05:12<13:04,  4.36s/it]                                                 25%|██▌       | 60/240 [05:12<13:04,  4.36s/it][INFO|trainer.py:3993] 2025-05-28 16:42:01,827 >> Saving model checkpoint to ./lora-phi4-magic1/checkpoint-60
+[INFO|configuration_utils.py:698] 2025-05-28 16:42:02,052 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:42:02,054 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2356] 2025-05-28 16:42:03,331 >> chat template saved in ./lora-phi4-magic1/checkpoint-60/chat_template.jinja
+[INFO|tokenization_utils_base.py:2525] 2025-05-28 16:42:03,332 >> tokenizer config file saved in ./lora-phi4-magic1/checkpoint-60/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2534] 2025-05-28 16:42:03,332 >> Special tokens file saved in ./lora-phi4-magic1/checkpoint-60/special_tokens_map.json
+ 25%|██▌       | 61/240 [05:20<16:01,  5.37s/it] 26%|██▌       | 62/240 [05:26<16:10,  5.45s/it] 26%|██▋       | 63/240 [05:31<16:10,  5.48s/it] 27%|██▋       | 64/240 [05:37<16:13,  5.53s/it] 27%|██▋       | 65/240 [05:42<16:04,  5.51s/it]                                                 27%|██▋       | 65/240 [05:42<16:04,  5.51s/it] 28%|██▊       | 66/240 [05:48<16:03,  5.54s/it] 28%|██▊       | 67/240 [05:53<15:55,  5.52s/it] 28%|██▊       | 68/240 [05:59<16:02,  5.59s/it] 29%|██▉       | 69/240 [06:05<16:00,  5.61s/it] 29%|██▉       | 70/240 [06:10<15:36,  5.51s/it]                                                 29%|██▉       | 70/240 [06:10<15:36,  5.51s/it] 30%|██▉       | 71/240 [06:16<15:36,  5.54s/it] 30%|███       | 72/240 [06:17<12:04,  4.31s/it] 30%|███       | 73/240 [06:23<13:10,  4.74s/it] 31%|███       | 74/240 [06:28<13:37,  4.93s/it] 31%|███▏      | 75/240 [06:34<13:58,  5.08s/it]                                                 31%|███▏      | 75/240 [06:34<13:58,  5.08s/it] 32%|███▏      | 76/240 [06:39<14:19,  5.24s/it] 32%|███▏      | 77/240 [06:45<14:50,  5.46s/it] 32%|███▎      | 78/240 [06:50<14:38,  5.42s/it] 33%|███▎      | 79/240 [06:56<14:40,  5.47s/it] 33%|███▎      | 80/240 [07:02<14:36,  5.48s/it]                                                 33%|███▎      | 80/240 [07:02<14:36,  5.48s/it][INFO|trainer.py:3993] 2025-05-28 16:43:51,229 >> Saving model checkpoint to ./lora-phi4-magic1/checkpoint-80
+[INFO|configuration_utils.py:698] 2025-05-28 16:43:51,625 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:43:51,626 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2356] 2025-05-28 16:43:52,938 >> chat template saved in ./lora-phi4-magic1/checkpoint-80/chat_template.jinja
+[INFO|tokenization_utils_base.py:2525] 2025-05-28 16:43:52,939 >> tokenizer config file saved in ./lora-phi4-magic1/checkpoint-80/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2534] 2025-05-28 16:43:52,965 >> Special tokens file saved in ./lora-phi4-magic1/checkpoint-80/special_tokens_map.json
+ 34%|███▍      | 81/240 [07:09<16:14,  6.13s/it] 34%|███▍      | 82/240 [07:15<15:48,  6.00s/it] 35%|███▍      | 83/240 [07:20<15:18,  5.85s/it] 35%|███▌      | 84/240 [07:22<11:51,  4.56s/it] 35%|███▌      | 85/240 [07:27<12:27,  4.82s/it]                                                 35%|███▌      | 85/240 [07:27<12:27,  4.82s/it] 36%|███▌      | 86/240 [07:33<13:00,  5.07s/it] 36%|███▋      | 87/240 [07:39<13:29,  5.29s/it] 37%|███▋      | 88/240 [07:44<13:33,  5.35s/it] 37%|███▋      | 89/240 [07:50<13:42,  5.45s/it] 38%|███▊      | 90/240 [07:56<13:39,  5.46s/it]                                                 38%|███▊      | 90/240 [07:56<13:39,  5.46s/it] 38%|███▊      | 91/240 [08:01<13:39,  5.50s/it] 38%|███▊      | 92/240 [08:07<13:35,  5.51s/it] 39%|███▉      | 93/240 [08:12<13:23,  5.47s/it] 39%|███▉      | 94/240 [08:18<13:31,  5.56s/it] 40%|███▉      | 95/240 [08:23<13:24,  5.55s/it]                                                 40%|███▉      | 95/240 [08:23<13:24,  5.55s/it] 40%|████      | 96/240 [08:25<10:28,  4.36s/it] 40%|████      | 97/240 [08:30<11:00,  4.62s/it] 41%|████      | 98/240 [08:36<11:46,  4.98s/it] 41%|████▏     | 99/240 [08:41<12:06,  5.15s/it] 42%|████▏     | 100/240 [08:47<12:24,  5.32s/it]                                                  42%|████▏     | 100/240 [08:47<12:24,  5.32s/it][INFO|trainer.py:3993] 2025-05-28 16:45:36,854 >> Saving model checkpoint to ./lora-phi4-magic1/checkpoint-100
+[INFO|configuration_utils.py:698] 2025-05-28 16:45:37,245 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:45:37,246 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2356] 2025-05-28 16:45:38,510 >> chat template saved in ./lora-phi4-magic1/checkpoint-100/chat_template.jinja
+[INFO|tokenization_utils_base.py:2525] 2025-05-28 16:45:38,510 >> tokenizer config file saved in ./lora-phi4-magic1/checkpoint-100/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2534] 2025-05-28 16:45:38,511 >> Special tokens file saved in ./lora-phi4-magic1/checkpoint-100/special_tokens_map.json
+ 42%|████▏     | 101/240 [08:55<14:07,  6.10s/it] 42%|████▎     | 102/240 [09:01<13:36,  5.92s/it] 43%|████▎     | 103/240 [09:06<13:25,  5.88s/it] 43%|████▎     | 104/240 [09:12<13:11,  5.82s/it] 44%|████▍     | 105/240 [09:18<12:52,  5.73s/it]                                                  44%|████▍     | 105/240 [09:18<12:52,  5.73s/it] 44%|████▍     | 106/240 [09:23<12:46,  5.72s/it] 45%|████▍     | 107/240 [09:29<12:22,  5.58s/it] 45%|████▌     | 108/240 [09:30<09:34,  4.35s/it] 45%|████▌     | 109/240 [09:35<10:08,  4.64s/it] 46%|████▌     | 110/240 [09:41<10:53,  5.02s/it]                                                  46%|████▌     | 110/240 [09:41<10:53,  5.02s/it] 46%|████▋     | 111/240 [09:47<11:03,  5.14s/it] 47%|████▋     | 112/240 [09:52<11:16,  5.28s/it] 47%|████▋     | 113/240 [09:58<11:18,  5.34s/it] 48%|████▊     | 114/240 [10:04<11:28,  5.46s/it] 48%|████▊     | 115/240 [10:09<11:39,  5.60s/it]                                                  48%|████▊     | 115/240 [10:09<11:39,  5.60s/it] 48%|████▊     | 116/240 [10:15<11:28,  5.55s/it] 49%|████▉     | 117/240 [10:21<11:25,  5.58s/it] 49%|████▉     | 118/240 [10:26<11:06,  5.46s/it] 50%|████▉     | 119/240 [10:31<11:05,  5.50s/it] 50%|█████     | 120/240 [10:33<08:30,  4.25s/it]                                                  50%|█████     | 120/240 [10:33<08:30,  4.25s/it][INFO|trainer.py:3993] 2025-05-28 16:47:22,299 >> Saving model checkpoint to ./lora-phi4-magic1/checkpoint-120
+[INFO|configuration_utils.py:698] 2025-05-28 16:47:22,647 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:47:22,649 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2356] 2025-05-28 16:47:23,882 >> chat template saved in ./lora-phi4-magic1/checkpoint-120/chat_template.jinja
+[INFO|tokenization_utils_base.py:2525] 2025-05-28 16:47:23,883 >> tokenizer config file saved in ./lora-phi4-magic1/checkpoint-120/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2534] 2025-05-28 16:47:23,883 >> Special tokens file saved in ./lora-phi4-magic1/checkpoint-120/special_tokens_map.json
+ 50%|█████     | 121/240 [10:40<10:15,  5.17s/it] 51%|█████     | 122/240 [10:45<10:19,  5.25s/it] 51%|█████▏    | 123/240 [10:51<10:31,  5.40s/it] 52%|█████▏    | 124/240 [10:57<10:26,  5.40s/it] 52%|█████▏    | 125/240 [11:02<10:31,  5.49s/it]                                                  52%|█████▏    | 125/240 [11:02<10:31,  5.49s/it] 52%|█████▎    | 126/240 [11:08<10:26,  5.50s/it] 53%|█████▎    | 127/240 [11:13<10:26,  5.54s/it] 53%|█████▎    | 128/240 [11:19<10:22,  5.56s/it] 54%|█████▍    | 129/240 [11:25<10:24,  5.62s/it] 54%|█████▍    | 130/240 [11:30<10:12,  5.57s/it]                                                  54%|█████▍    | 130/240 [11:30<10:12,  5.57s/it] 55%|█████▍    | 131/240 [11:36<10:11,  5.61s/it] 55%|█████▌    | 132/240 [11:37<07:49,  4.35s/it] 55%|█████▌    | 133/240 [11:43<08:16,  4.64s/it] 56%|█████▌    | 134/240 [11:48<08:46,  4.97s/it] 56%|█████▋    | 135/240 [11:54<09:06,  5.21s/it]                                                  56%|█████▋    | 135/240 [11:54<09:06,  5.21s/it] 57%|█████▋    | 136/240 [12:00<09:13,  5.32s/it] 57%|█████▋    | 137/240 [12:05<09:16,  5.40s/it] 57%|█████▊    | 138/240 [12:11<09:23,  5.52s/it] 58%|█████▊    | 139/240 [12:17<09:17,  5.52s/it] 58%|█████▊    | 140/240 [12:22<09:17,  5.57s/it]                                                  58%|█████▊    | 140/240 [12:22<09:17,  5.57s/it][INFO|trainer.py:3993] 2025-05-28 16:49:11,984 >> Saving model checkpoint to ./lora-phi4-magic1/checkpoint-140
+[INFO|configuration_utils.py:698] 2025-05-28 16:49:12,204 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:49:12,205 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2356] 2025-05-28 16:49:13,428 >> chat template saved in ./lora-phi4-magic1/checkpoint-140/chat_template.jinja
+[INFO|tokenization_utils_base.py:2525] 2025-05-28 16:49:13,429 >> tokenizer config file saved in ./lora-phi4-magic1/checkpoint-140/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2534] 2025-05-28 16:49:13,429 >> Special tokens file saved in ./lora-phi4-magic1/checkpoint-140/special_tokens_map.json
+ 59%|█████▉    | 141/240 [12:30<10:04,  6.11s/it] 59%|█████▉    | 142/240 [12:35<09:36,  5.89s/it] 60%|█████▉    | 143/240 [12:40<09:11,  5.69s/it] 60%|██████    | 144/240 [12:42<07:00,  4.38s/it] 60%|██████    | 145/240 [12:47<07:33,  4.78s/it]                                                  60%|██████    | 145/240 [12:47<07:33,  4.78s/it] 61%|██████    | 146/240 [12:53<07:55,  5.06s/it] 61%|██████▏   | 147/240 [12:59<08:09,  5.27s/it] 62%|██████▏   | 148/240 [13:04<08:07,  5.30s/it] 62%|██████▏   | 149/240 [13:10<08:14,  5.43s/it] 62%|██████▎   | 150/240 [13:15<08:09,  5.44s/it]                                                  62%|██████▎   | 150/240 [13:15<08:09,  5.44s/it] 63%|██████▎   | 151/240 [13:21<08:04,  5.45s/it] 63%|██████▎   | 152/240 [13:26<08:02,  5.49s/it] 64%|██████▍   | 153/240 [13:32<07:57,  5.49s/it] 64%|██████▍   | 154/240 [13:37<07:50,  5.47s/it] 65%|██████▍   | 155/240 [13:43<07:44,  5.47s/it]                                                  65%|██████▍   | 155/240 [13:43<07:44,  5.47s/it] 65%|██████▌   | 156/240 [13:44<05:57,  4.26s/it] 65%|██████▌   | 157/240 [13:50<06:26,  4.66s/it] 66%|██████▌   | 158/240 [13:55<06:40,  4.89s/it] 66%|██████▋   | 159/240 [14:01<06:56,  5.14s/it] 67%|██████▋   | 160/240 [14:06<06:52,  5.15s/it]                                                  67%|██████▋   | 160/240 [14:06<06:52,  5.15s/it][INFO|trainer.py:3993] 2025-05-28 16:50:55,801 >> Saving model checkpoint to ./lora-phi4-magic1/checkpoint-160
+[INFO|configuration_utils.py:698] 2025-05-28 16:50:56,022 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:50:56,023 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2356] 2025-05-28 16:50:57,248 >> chat template saved in ./lora-phi4-magic1/checkpoint-160/chat_template.jinja
+[INFO|tokenization_utils_base.py:2525] 2025-05-28 16:50:57,249 >> tokenizer config file saved in ./lora-phi4-magic1/checkpoint-160/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2534] 2025-05-28 16:50:57,249 >> Special tokens file saved in ./lora-phi4-magic1/checkpoint-160/special_tokens_map.json
+ 67%|██████▋   | 161/240 [14:13<07:39,  5.82s/it] 68%|██████▊   | 162/240 [14:19<07:31,  5.79s/it] 68%|██████▊   | 163/240 [14:25<07:23,  5.76s/it] 68%|██████▊   | 164/240 [14:30<07:11,  5.68s/it] 69%|██████▉   | 165/240 [14:36<07:03,  5.64s/it]                                                  69%|██████▉   | 165/240 [14:36<07:03,  5.64s/it] 69%|██████▉   | 166/240 [14:41<06:52,  5.58s/it] 70%|██████▉   | 167/240 [14:47<06:50,  5.62s/it] 70%|███████   | 168/240 [14:49<05:15,  4.39s/it] 70%|███████   | 169/240 [14:54<05:42,  4.83s/it] 71%|███████   | 170/240 [15:00<05:58,  5.12s/it]                                                  71%|███████   | 170/240 [15:00<05:58,  5.12s/it] 71%|███████▏  | 171/240 [15:05<05:54,  5.14s/it] 72%|███████▏  | 172/240 [15:11<05:55,  5.23s/it] 72%|███████▏  | 173/240 [15:17<06:03,  5.42s/it] 72%|███████▎  | 174/240 [15:22<05:55,  5.39s/it] 73%|███████▎  | 175/240 [15:27<05:42,  5.27s/it]                                                  73%|███████▎  | 175/240 [15:27<05:42,  5.27s/it] 73%|███████▎  | 176/240 [15:33<05:43,  5.36s/it] 74%|███████▍  | 177/240 [15:38<05:39,  5.39s/it] 74%|███████▍  | 178/240 [15:44<05:44,  5.56s/it] 75%|███████▍  | 179/240 [15:50<05:40,  5.58s/it] 75%|███████▌  | 180/240 [15:51<04:21,  4.36s/it]                                                  75%|███████▌  | 180/240 [15:51<04:21,  4.36s/it][INFO|trainer.py:3993] 2025-05-28 16:52:40,887 >> Saving model checkpoint to ./lora-phi4-magic1/checkpoint-180
+[INFO|configuration_utils.py:698] 2025-05-28 16:52:41,117 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:52:41,119 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2356] 2025-05-28 16:52:42,428 >> chat template saved in ./lora-phi4-magic1/checkpoint-180/chat_template.jinja
+[INFO|tokenization_utils_base.py:2525] 2025-05-28 16:52:42,428 >> tokenizer config file saved in ./lora-phi4-magic1/checkpoint-180/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2534] 2025-05-28 16:52:42,428 >> Special tokens file saved in ./lora-phi4-magic1/checkpoint-180/special_tokens_map.json
+ 75%|███████▌  | 181/240 [15:59<05:14,  5.33s/it] 76%|███████▌  | 182/240 [16:04<05:11,  5.38s/it] 76%|███████▋  | 183/240 [16:10<05:09,  5.43s/it] 77%|███████▋  | 184/240 [16:16<05:07,  5.49s/it] 77%|███████▋  | 185/240 [16:21<05:02,  5.50s/it]                                                  77%|███████▋  | 185/240 [16:21<05:02,  5.50s/it] 78%|███████▊  | 186/240 [16:27<04:58,  5.53s/it] 78%|███████▊  | 187/240 [16:32<04:55,  5.58s/it] 78%|███████▊  | 188/240 [16:38<04:53,  5.65s/it] 79%|███████▉  | 189/240 [16:44<04:46,  5.62s/it] 79%|███████▉  | 190/240 [16:49<04:38,  5.58s/it]                                                  79%|███████▉  | 190/240 [16:49<04:38,  5.58s/it] 80%|███████▉  | 191/240 [16:54<04:27,  5.46s/it] 80%|████████  | 192/240 [16:56<03:24,  4.25s/it] 80%|████████  | 193/240 [17:02<03:41,  4.71s/it] 81%|████████  | 194/240 [17:07<03:43,  4.87s/it] 81%|████████▏ | 195/240 [17:12<03:49,  5.10s/it]                                                  81%|████████▏ | 195/240 [17:12<03:49,  5.10s/it] 82%|████████▏ | 196/240 [17:18<03:51,  5.26s/it] 82%|████████▏ | 197/240 [17:24<03:48,  5.31s/it] 82%|████████▎ | 198/240 [17:29<03:47,  5.41s/it] 83%|████████▎ | 199/240 [17:35<03:46,  5.51s/it] 83%|████████▎ | 200/240 [17:40<03:39,  5.49s/it]                                                  83%|████████▎ | 200/240 [17:40<03:39,  5.49s/it][INFO|trainer.py:3993] 2025-05-28 16:54:29,991 >> Saving model checkpoint to ./lora-phi4-magic1/checkpoint-200
+[INFO|configuration_utils.py:698] 2025-05-28 16:54:30,213 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:54:30,215 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2356] 2025-05-28 16:54:31,533 >> chat template saved in ./lora-phi4-magic1/checkpoint-200/chat_template.jinja
+[INFO|tokenization_utils_base.py:2525] 2025-05-28 16:54:31,534 >> tokenizer config file saved in ./lora-phi4-magic1/checkpoint-200/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2534] 2025-05-28 16:54:31,534 >> Special tokens file saved in ./lora-phi4-magic1/checkpoint-200/special_tokens_map.json
+ 84%|████████▍ | 201/240 [17:48<04:00,  6.16s/it] 84%|████████▍ | 202/240 [17:53<03:43,  5.89s/it] 85%|████████▍ | 203/240 [17:59<03:30,  5.68s/it] 85%|████████▌ | 204/240 [18:00<02:39,  4.43s/it] 85%|████████▌ | 205/240 [18:06<02:46,  4.77s/it]                                                  85%|████████▌ | 205/240 [18:06<02:46,  4.77s/it] 86%|████████▌ | 206/240 [18:11<02:51,  5.04s/it] 86%|████████▋ | 207/240 [18:17<02:52,  5.22s/it] 87%|████████▋ | 208/240 [18:22<02:50,  5.32s/it] 87%|████████▋ | 209/240 [18:28<02:48,  5.42s/it] 88%|████████▊ | 210/240 [18:33<02:41,  5.39s/it]                                                  88%|████████▊ | 210/240 [18:33<02:41,  5.39s/it] 88%|████████▊ | 211/240 [18:39<02:37,  5.42s/it] 88%|████████▊ | 212/240 [18:45<02:34,  5.51s/it] 89%|████████▉ | 213/240 [18:50<02:30,  5.58s/it] 89%|████████▉ | 214/240 [18:56<02:24,  5.56s/it] 90%|████████▉ | 215/240 [19:02<02:21,  5.64s/it]                                                  90%|████████▉ | 215/240 [19:02<02:21,  5.64s/it] 90%|█████████ | 216/240 [19:03<01:44,  4.37s/it] 90%|█████████ | 217/240 [19:09<01:51,  4.83s/it] 91%|█████████ | 218/240 [19:15<01:54,  5.20s/it] 91%|█████████▏| 219/240 [19:21<01:51,  5.33s/it] 92%|█████████▏| 220/240 [19:26<01:47,  5.39s/it]                                                  92%|█████████▏| 220/240 [19:26<01:47,  5.39s/it][INFO|trainer.py:3993] 2025-05-28 16:56:15,912 >> Saving model checkpoint to ./lora-phi4-magic1/checkpoint-220
+[INFO|configuration_utils.py:698] 2025-05-28 16:56:17,155 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:56:17,157 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2356] 2025-05-28 16:56:18,376 >> chat template saved in ./lora-phi4-magic1/checkpoint-220/chat_template.jinja
+[INFO|tokenization_utils_base.py:2525] 2025-05-28 16:56:18,377 >> tokenizer config file saved in ./lora-phi4-magic1/checkpoint-220/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2534] 2025-05-28 16:56:18,377 >> Special tokens file saved in ./lora-phi4-magic1/checkpoint-220/special_tokens_map.json
+ 92%|█████████▏| 221/240 [19:35<01:59,  6.26s/it] 92%|█████████▎| 222/240 [19:40<01:47,  5.95s/it] 93%|█████████▎| 223/240 [19:45<01:38,  5.78s/it] 93%|█████████▎| 224/240 [19:51<01:32,  5.77s/it] 94%|█████████▍| 225/240 [19:56<01:24,  5.60s/it]                                                  94%|█████████▍| 225/240 [19:56<01:24,  5.60s/it] 94%|█████████▍| 226/240 [20:02<01:18,  5.62s/it] 95%|█████████▍| 227/240 [20:07<01:12,  5.57s/it] 95%|█████████▌| 228/240 [20:09<00:52,  4.36s/it] 95%|█████████▌| 229/240 [20:14<00:51,  4.69s/it] 96%|█████████▌| 230/240 [20:20<00:49,  4.98s/it]                                                  96%|█████████▌| 230/240 [20:20<00:49,  4.98s/it] 96%|█████████▋| 231/240 [20:25<00:45,  5.09s/it] 97%|█████████▋| 232/240 [20:31<00:41,  5.20s/it] 97%|█████████▋| 233/240 [20:36<00:37,  5.33s/it] 98%|█████████▊| 234/240 [20:42<00:32,  5.43s/it] 98%|█████████▊| 235/240 [20:48<00:27,  5.48s/it]                                                  98%|█████████▊| 235/240 [20:48<00:27,  5.48s/it] 98%|█████████▊| 236/240 [20:53<00:22,  5.52s/it] 99%|█████████▉| 237/240 [20:59<00:16,  5.62s/it] 99%|█████████▉| 238/240 [21:04<00:11,  5.50s/it]100%|█████████▉| 239/240 [21:10<00:05,  5.59s/it]100%|██████████| 240/240 [21:12<00:00,  4.36s/it]                                                 100%|██████████| 240/240 [21:12<00:00,  4.36s/it][INFO|trainer.py:3993] 2025-05-28 16:58:01,217 >> Saving model checkpoint to ./lora-phi4-magic1/checkpoint-240
+[INFO|configuration_utils.py:698] 2025-05-28 16:58:01,444 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:58:01,446 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2356] 2025-05-28 16:58:02,704 >> chat template saved in ./lora-phi4-magic1/checkpoint-240/chat_template.jinja
+[INFO|tokenization_utils_base.py:2525] 2025-05-28 16:58:02,704 >> tokenizer config file saved in ./lora-phi4-magic1/checkpoint-240/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2534] 2025-05-28 16:58:02,704 >> Special tokens file saved in ./lora-phi4-magic1/checkpoint-240/special_tokens_map.json
+[INFO|trainer.py:2676] 2025-05-28 16:58:03,029 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+                                                 100%|██████████| 240/240 [21:13<00:00,  4.36s/it]100%|██████████| 240/240 [21:13<00:00,  5.31s/it]
+[INFO|trainer.py:3993] 2025-05-28 16:58:03,032 >> Saving model checkpoint to ./lora-phi4-magic1
+[INFO|configuration_utils.py:698] 2025-05-28 16:58:03,259 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--Phi-4-mini-instruct/snapshots/5a149550068a1eb93398160d8953f5f56c3603e9/config.json
+[INFO|configuration_utils.py:770] 2025-05-28 16:58:03,261 >> Model config Phi3Config {
+  "architectures": [
+    "Phi3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "auto_map": {
+    "AutoConfig": "microsoft/Phi-4-mini-instruct--configuration_phi3.Phi3Config",
+    "AutoModelForCausalLM": "microsoft/Phi-4-mini-instruct--modeling_phi3.Phi3ForCausalLM",
+    "AutoTokenizer": "microsoft/Phi-4-mini-instruct--Xenova/gpt-4o"
+  },
+  "bos_token_id": 199999,
+  "embd_pdrop": 0.0,
+  "eos_token_id": 199999,
+  "full_attn_mod": 1,
+  "hidden_act": "silu",
+  "hidden_size": 3072,
+  "initializer_range": 0.02,
+  "intermediate_size": 8192,
+  "interpolate_factor": 1,
+  "lm_head_bias": false,
+  "max_position_embeddings": 131072,
+  "mlp_bias": false,
+  "model_type": "phi3",
+  "num_attention_heads": 24,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "original_max_position_embeddings": 4096,
+  "pad_token_id": 199999,
+  "partial_rotary_factor": 0.75,
+  "resid_pdrop": 0.0,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "long_factor": [
+      1,
+      1.118320672,
+      1.250641126,
+      1.398617824,
+      1.564103225,
+      1.74916897,
+      1.956131817,
+      2.187582649,
+      2.446418898,
+      2.735880826,
+      3.059592084,
+      3.421605075,
+      3.826451687,
+      4.279200023,
+      4.785517845,
+      5.351743533,
+      5.984965424,
+      6.693110555,
+      7.485043894,
+      8.370679318,
+      9.36110372,
+      10.4687158,
+      11.70738129,
+      13.09260651,
+      14.64173252,
+      16.37415215,
+      18.31155283,
+      20.47818807,
+      22.90118105,
+      25.61086418,
+      28.64115884,
+      32.03,
+      32.1,
+      32.13,
+      32.23,
+      32.6,
+      32.61,
+      32.64,
+      32.66,
+      32.7,
+      32.71,
+      32.93,
+      32.97,
+      33.28,
+      33.49,
+      33.5,
+      44.16,
+      47.77
+    ],
+    "short_factor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "type": "longrope"
+  },
+  "rope_theta": 10000.0,
+  "sliding_window": 262144,
+  "tie_word_embeddings": true,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.1",
+  "use_cache": true,
+  "vocab_size": 200064
+}
+
+[INFO|tokenization_utils_base.py:2356] 2025-05-28 16:58:04,513 >> chat template saved in ./lora-phi4-magic1/chat_template.jinja
+[INFO|tokenization_utils_base.py:2525] 2025-05-28 16:58:04,514 >> tokenizer config file saved in ./lora-phi4-magic1/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2534] 2025-05-28 16:58:04,514 >> Special tokens file saved in ./lora-phi4-magic1/special_tokens_map.json
+{'loss': 2.0905, 'grad_norm': 1.9506487846374512, 'learning_rate': 0.0005, 'epoch': 0.44}
+{'loss': 1.6779, 'grad_norm': 1.6643935441970825, 'learning_rate': 0.0005, 'epoch': 0.89}
+{'loss': 1.1008, 'grad_norm': 0.8689168691635132, 'learning_rate': 0.0005, 'epoch': 1.27}
+{'loss': 0.7408, 'grad_norm': 0.8911944627761841, 'learning_rate': 0.0005, 'epoch': 1.71}
+{'loss': 0.5863, 'grad_norm': 1.5329293012619019, 'learning_rate': 0.0005, 'epoch': 2.09}
+{'loss': 0.2995, 'grad_norm': 0.8638470768928528, 'learning_rate': 0.0005, 'epoch': 2.53}
+{'loss': 0.3009, 'grad_norm': 0.8133000135421753, 'learning_rate': 0.0005, 'epoch': 2.98}
+{'loss': 0.191, 'grad_norm': 0.8458332419395447, 'learning_rate': 0.0005, 'epoch': 3.36}
+{'loss': 0.181, 'grad_norm': 0.6791406869888306, 'learning_rate': 0.0005, 'epoch': 3.8}
+{'loss': 0.1278, 'grad_norm': 0.5865709781646729, 'learning_rate': 0.0005, 'epoch': 4.18}
+{'loss': 0.1312, 'grad_norm': 0.554696798324585, 'learning_rate': 0.0005, 'epoch': 4.62}
+{'loss': 0.1264, 'grad_norm': 1.0623701810836792, 'learning_rate': 0.0005, 'epoch': 5.0}
+{'loss': 0.0791, 'grad_norm': 0.538628876209259, 'learning_rate': 0.0005, 'epoch': 5.44}
+{'loss': 0.0896, 'grad_norm': 0.5929829478263855, 'learning_rate': 0.0005, 'epoch': 5.89}
+{'loss': 0.0482, 'grad_norm': 0.44924506545066833, 'learning_rate': 0.0005, 'epoch': 6.27}
+{'loss': 0.0669, 'grad_norm': 0.5959622263908386, 'learning_rate': 0.0005, 'epoch': 6.71}
+{'loss': 0.0639, 'grad_norm': 0.3182227313518524, 'learning_rate': 0.0005, 'epoch': 7.09}
+{'loss': 0.0563, 'grad_norm': 0.4680445194244385, 'learning_rate': 0.0005, 'epoch': 7.53}
+{'loss': 0.0581, 'grad_norm': 0.5323220491409302, 'learning_rate': 0.0005, 'epoch': 7.98}
+{'loss': 0.057, 'grad_norm': 0.6128352284431458, 'learning_rate': 0.0005, 'epoch': 8.36}
+{'loss': 0.0457, 'grad_norm': 0.49489888548851013, 'learning_rate': 0.0005, 'epoch': 8.8}
+{'loss': 0.0558, 'grad_norm': 0.33401012420654297, 'learning_rate': 0.0005, 'epoch': 9.18}
+{'loss': 0.0465, 'grad_norm': 0.26077330112457275, 'learning_rate': 0.0005, 'epoch': 9.62}
+{'loss': 0.0402, 'grad_norm': 0.6166205406188965, 'learning_rate': 0.0005, 'epoch': 10.0}
+{'loss': 0.0311, 'grad_norm': 0.3662610650062561, 'learning_rate': 0.0005, 'epoch': 10.44}
+{'loss': 0.0402, 'grad_norm': 0.37377527356147766, 'learning_rate': 0.0005, 'epoch': 10.89}
+{'loss': 0.0487, 'grad_norm': 0.25822851061820984, 'learning_rate': 0.0005, 'epoch': 11.27}
+{'loss': 0.0582, 'grad_norm': 0.36646443605422974, 'learning_rate': 0.0005, 'epoch': 11.71}
+{'loss': 0.0396, 'grad_norm': 0.2353023886680603, 'learning_rate': 0.0005, 'epoch': 12.09}
+{'loss': 0.0311, 'grad_norm': 0.4051302969455719, 'learning_rate': 0.0005, 'epoch': 12.53}
+{'loss': 0.037, 'grad_norm': 0.4042307436466217, 'learning_rate': 0.0005, 'epoch': 12.98}
+{'loss': 0.0275, 'grad_norm': 0.39739856123924255, 'learning_rate': 0.0005, 'epoch': 13.36}
+{'loss': 0.0409, 'grad_norm': 0.5021456480026245, 'learning_rate': 0.0005, 'epoch': 13.8}
+{'loss': 0.0526, 'grad_norm': 0.385104775428772, 'learning_rate': 0.0005, 'epoch': 14.18}
+{'loss': 0.0253, 'grad_norm': 0.35951682925224304, 'learning_rate': 0.0005, 'epoch': 14.62}
+{'loss': 0.0624, 'grad_norm': 0.7232075333595276, 'learning_rate': 0.0005, 'epoch': 15.0}
+{'loss': 0.0357, 'grad_norm': 0.6004836559295654, 'learning_rate': 0.0005, 'epoch': 15.44}
+{'loss': 0.045, 'grad_norm': 0.6547806262969971, 'learning_rate': 0.0005, 'epoch': 15.89}
+{'loss': 0.0642, 'grad_norm': 0.4513415992259979, 'learning_rate': 0.0005, 'epoch': 16.27}
+{'loss': 0.0775, 'grad_norm': 0.8722729682922363, 'learning_rate': 0.0005, 'epoch': 16.71}
+{'loss': 0.0699, 'grad_norm': 0.6660470366477966, 'learning_rate': 0.0005, 'epoch': 17.09}
+{'loss': 0.0653, 'grad_norm': 0.4980739653110504, 'learning_rate': 0.0005, 'epoch': 17.53}
+{'loss': 0.0609, 'grad_norm': 0.7911326885223389, 'learning_rate': 0.0005, 'epoch': 17.98}
+{'loss': 0.0689, 'grad_norm': 0.6471480131149292, 'learning_rate': 0.0005, 'epoch': 18.36}
+{'loss': 0.0642, 'grad_norm': 0.6146423816680908, 'learning_rate': 0.0005, 'epoch': 18.8}
+{'loss': 0.0601, 'grad_norm': 0.58843594789505, 'learning_rate': 0.0005, 'epoch': 19.18}
+{'loss': 0.0885, 'grad_norm': 0.7186406850814819, 'learning_rate': 0.0005, 'epoch': 19.62}
+{'loss': 0.0707, 'grad_norm': 0.7277708053588867, 'learning_rate': 0.0005, 'epoch': 20.0}
+{'train_runtime': 1273.9239, 'train_samples_per_second': 2.826, 'train_steps_per_second': 0.188, 'train_loss': 0.19847503900527955, 'epoch': 20.0}
+***** train metrics *****
+  epoch                    =       20.0
+  total_flos               =  9406556GF
+  train_loss               =     0.1985
+  train_runtime            = 0:21:13.92
+  train_samples_per_second =      2.826
+  train_steps_per_second   =      0.188
+Figure saved at: ./lora-phi4-magic1/training_loss.png
+[WARNING|2025-05-28 16:58:05] llamafactory.extras.ploting:148 >> No metric eval_loss to plot.
+[WARNING|2025-05-28 16:58:05] llamafactory.extras.ploting:148 >> No metric eval_accuracy to plot.
+[INFO|modelcard.py:450] 2025-05-28 16:58:05,037 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}

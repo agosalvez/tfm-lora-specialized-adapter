@@ -19,7 +19,7 @@ Este proyecto implementa un sistema de especialización de modelos de lenguaje d
 - **Dependencias principales**: transformers, peft, torch, docling
 
 ## Estructura del Proyecto
-```bash
+
 tfm-lora-adapter/
 ├── data/                    # Datasets y datos procesados
 ├── scripts/
@@ -30,7 +30,7 @@ tfm-lora-adapter/
 │   └── dataset_config.json # Configuración del dataset para LoRA
 ├── results/                 # Logs y resultados de entrenamiento
 └── README.md
-```
+
 ## Uso Rápido
 
 ### 1. Entrenamiento del Adapter
@@ -39,7 +39,6 @@ tfm-lora-adapter/
 cd scripts
 chmod +x train.sh
 ./train.sh
-```
 
 ### 2. Inferencia con Adapter Especializado
 
