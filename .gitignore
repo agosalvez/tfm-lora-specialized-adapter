@@ -1,0 +1,6 @@
+*.sh
+*.run
+venv/
+Miniconda*
+cuda_*
+=*
