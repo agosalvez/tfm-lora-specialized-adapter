@@ -1,0 +1,76 @@
+# Página 1
+
+La evolución del automóvil: de la combustión al futuro eléctrico 
+El automóvil ha sido, sin lugar a dudas, uno de los inventos más influyentes del siglo 
+XX. No solo revolucionó la forma en que nos desplazamos, sino que también 
+transformó las ciudades, la economía y nuestra relación con el tiempo y el espacio. 
+Desde los primeros vehículos a motor de combustión interna hasta los actuales coches 
+eléctricos impulsados por baterías de alta capacidad, el sector automotriz ha 
+experimentado una transformación constante impulsada por la innovación tecnológica, 
+la regulación medioambiental y las preferencias del consumidor. 
+Los primeros coches a gasolina, desarrollados a finales del siglo XIX por pioneros 
+como Karl Benz y Gottlieb Daimler, eran máquinas rudimentarias, con motores 
+ruidosos y velocidades muy limitadas. Sin embargo, ofrecían algo que ningún otro 
+medio de transporte podía: autonomía individual. Con el paso del tiempo, los coches 
+fueron perfeccionándose: aparecieron mejoras en la suspensión, frenos, sistemas de 
+dirección y, por supuesto, en la potencia de los motores. A mediados del siglo XX, los 
+vehículos ya eran productos de consumo masivo, símbolo de estatus y libertad.  
+ 
+Durante décadas, el diseño y la ingeniería de los automóviles giraron en torno al motor 
+de combustión interna. Se optimizó su eficiencia, se introdujeron sistemas de inyección 
+
+![Imagen 1](imagen_p1_id1.png)
+
+*[IMAGEN 1 UBICADA AQUÍ EN EL DOCUMENTO ORIGINAL]*
+
+electrónica, catalizadores para reducir emisiones, y se desarrollaron cajas de cambio 
+automáticas cada vez más inteligentes. Sin embargo, este modelo tiene un límite: el 
+combustible fósil. La dependencia de la gasolina y el diésel, junto con el impacto 
+ambiental de las emisiones contaminantes, empujó a la industria a buscar alternativas 
+más sostenibles. 
+Aquí es donde entra en juego el coche eléctrico. Aunque no es un invento nuevo —los 
+primeros prototipos datan de principios del siglo XX—, la tecnología de baterías no 
+había madurado lo suficiente hasta hace apenas dos décadas. Con la mejora de las 
+baterías de iones de litio, la reducción de costes y la aparición de actores disruptivos 
+como Tesla, el mercado comenzó a cambiar. Hoy en día, la mayoría de los fabricantes 
+tradicionales tienen una línea de vehículos eléctricos o híbridos enchufables, y las 
+inversiones en I+D para mejorar la autonomía, reducir los tiempos de carga y ampliar la 
+red de puntos de recarga no dejan de crecer. 
+Pero la electrificación no es el único cambio importante. También estamos presenciando 
+avances en la conducción autónoma, conectividad entre vehículos (V2V), integración 
+con asistentes de voz y sistemas de navegación predictivos basados en inteligencia 
+
+
+---
+
+# Página 2
+
+artificial. El coche del futuro ya no es simplemente un medio de transporte, sino una 
+plataforma tecnológica sobre ruedas. 
+A nivel social, este cambio también tiene implicaciones profundas. El concepto de 
+“movilidad como servicio” (MaaS, por sus siglas en inglés) plantea un escenario donde 
+la propiedad del vehículo pasa a un segundo plano. En lugar de comprar un coche, 
+muchas personas optan por servicios de carsharing, suscripciones mensuales o incluso 
+flotas bajo demanda controladas por algoritmos. Este enfoque no solo reduce costes 
+para el usuario, sino que también optimiza el uso del espacio urbano y reduce la huella 
+de carbono. 
+Por supuesto, la transición no está exenta de desafíos. El reciclaje de baterías, el 
+suministro de materias primas como el litio o el cobalto, la necesidad de redes eléctricas 
+más robustas y la creación de infraestructura de carga en zonas rurales son algunos de 
+los obstáculos a resolver. Además, la industria del automóvil representa millones de 
+empleos en todo el mundo, muchos de ellos ligados a tecnologías tradicionales. La 
+reconversión del sector y la formación de trabajadores en nuevas competencias son 
+cuestiones clave para que esta transición sea justa y sostenible. 
+En definitiva, el automóvil está viviendo su mayor transformación desde su invención. 
+El futuro no es solo eléctrico, sino también inteligente, conectado y posiblemente 
+compartido. Aunque todavía queda camino por recorrer, lo cierto es que los coches que 
+veremos en las próximas décadas serán radicalmente distintos a los que hemos 
+conocido. Y eso, lejos de ser una amenaza, representa una oportunidad para reinventar 
+la movilidad desde una perspectiva más eficiente, segura y respetuosa con el entorno. 
+ 
+ 
+ 
+
+
+---
+
