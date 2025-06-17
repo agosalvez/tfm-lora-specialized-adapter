@@ -1,0 +1,6 @@
+pillow
+pdfminer.six
+Flask>=2.0.0
+docling==2.37.0
+docling-parse>=4.0.5
+PyMuPDF
