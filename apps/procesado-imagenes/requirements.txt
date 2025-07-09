@@ -9,7 +9,7 @@ torchvision>=0.15.0
 torchaudio>=2.0.0
 
 # Transformers y modelo
-transformers>=4.37.0
+transformers>=4.44.0
 accelerate>=0.20.0
 bitsandbytes>=0.41.0
 

@@ -1,8 +1,0 @@
-# requirements.txt
-flask==2.3.3
-docling==2.36.1
-werkzeug==2.3.7
-pillow==10.0.1
-python-multipart==0.0.6
-PyPDF2==3.0.1
-PyMuPDF==1.24.10

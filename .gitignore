@@ -1,6 +1,6 @@
 *.sh
 *.run
-venv/
+**/venv/
 Miniconda*
 cuda_*
 =*

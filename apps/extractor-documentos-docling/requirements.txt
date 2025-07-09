@@ -1,0 +1,19 @@
+# ================================================================
+# REQUIREMENTS.TXT - Docling Document Processing
+# ================================================================
+
+# Docling - Document processing library
+docling
+
+# ================================================================
+# NOTAS DE INSTALACIÓN:
+#
+# Instalar dependencias:
+# pip install -r requirements.txt
+#
+# O instalar directamente:
+# pip install docling
+#
+# Verificar instalación:
+# python -c "import docling; print('Docling instalado correctamente')"
+# ================================================================

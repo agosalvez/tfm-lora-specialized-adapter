@@ -1,7 +1,7 @@
 {
   "model_name": "Qwen/Qwen2-VL-7B-Instruct",
   "setup_success": true,
-  "torch_version": "2.7.0+cu118",
-  "cuda_available": true,
-  "setup_timestamp": null
+  "torch_version": "2.7.1+cu126",
+  "cuda_available": false,
+  "setup_timestamp": "N/A"
 }
