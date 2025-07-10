@@ -4,3 +4,17 @@
 Miniconda*
 cuda_*
 =*
+
+# Archivos de configuración sensibles
+.env
+.env.local
+.env.production
+.env.development
+
+# Logs
+*.log
+logs/
+
+# Directorios de resultados
+artifacts/
+image_descriptions/

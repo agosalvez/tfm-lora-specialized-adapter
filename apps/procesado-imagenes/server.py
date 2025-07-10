@@ -7,6 +7,11 @@ from PIL import Image
 import torch
 from transformers import Qwen2VLForConditionalGeneration, AutoProcessor
 import logging
+from functools import wraps
+from dotenv import load_dotenv
+
+# Cargar variables de entorno
+load_dotenv()
 
 # Configurar logging
 logging.basicConfig(level=logging.INFO)
@@ -14,10 +19,46 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
+# Token de autenticación desde variables de entorno
+AUTH_TOKEN = os.getenv('AUTH_TOKEN', '123')
+
 # Variables globales para el modelo
 model = None
 processor = None
 device = None
+
+def require_auth(f):
+    """Decorator para requerir autenticación"""
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        auth_header = request.headers.get('Authorization')
+        
+        if not auth_header:
+            return jsonify({
+                'success': False,
+                'error': 'Cabecera de autenticación requerida'
+            }), 401
+        
+        # Verificar formato Bearer token
+        if not auth_header.startswith('Bearer '):
+            return jsonify({
+                'success': False,
+                'error': 'Formato de autenticación inválido. Use: Bearer <token>'
+            }), 401
+        
+        # Extraer token
+        token = auth_header.split(' ')[1]
+        
+        # Verificar token
+        if token != AUTH_TOKEN:
+            return jsonify({
+                'success': False,
+                'error': 'Token de autenticación inválido'
+            }), 401
+        
+        return f(*args, **kwargs)
+    
+    return decorated_function
 
 def load_model():
     """Cargar el modelo Qwen2-VL"""
@@ -293,11 +334,13 @@ HTML_TEMPLATE = """
 """
 
 @app.route('/')
+@require_auth
 def index():
     """Página principal con interfaz web"""
     return render_template_string(HTML_TEMPLATE)
 
 @app.route('/status')
+@require_auth
 def status():
     """Endpoint para verificar estado del servidor"""
     global model, processor
@@ -317,6 +360,7 @@ def status():
         }), 500
 
 @app.route('/analyze', methods=['POST'])
+@require_auth
 def analyze():
     """Endpoint para analizar imagen con texto"""
     global model, processor
@@ -373,6 +417,7 @@ def analyze():
         }), 500
 
 @app.route('/analyze_base64', methods=['POST'])
+@require_auth
 def analyze_base64():
     """Endpoint para analizar imagen en base64"""
     try:
@@ -431,12 +476,13 @@ def main():
     debug = os.environ.get('DEBUG', 'False').lower() == 'true'
     
     logger.info(f"🌐 Servidor disponible en: http://{host}:{port}")
+    logger.info("🔐 Autenticación requerida: Bearer RANDOM")
     logger.info("📖 Endpoints disponibles:")
-    logger.info("  GET  / - Interfaz web")
-    logger.info("  GET  /status - Estado del servidor")
-    logger.info("  POST /analyze - Analizar imagen (form-data)")
-    logger.info("  POST /analyze_base64 - Analizar imagen (base64)")
-    logger.info("  GET  /health - Estado de salud")
+    logger.info("  GET  / - Interfaz web (requiere auth)")
+    logger.info("  GET  /status - Estado del servidor (requiere auth)")
+    logger.info("  POST /analyze - Analizar imagen (form-data) (requiere auth)")
+    logger.info("  POST /analyze_base64 - Analizar imagen (base64) (requiere auth)")
+    logger.info("  GET  /health - Estado de salud (sin auth)")
     
     # Iniciar servidor
     app.run(host=host, port=port, debug=debug)
