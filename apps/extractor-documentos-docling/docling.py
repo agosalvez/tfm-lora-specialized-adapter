@@ -11,14 +11,14 @@ import shutil
 from pathlib import Path
 from datetime import datetime
 
-def procesar_pdf(pdf_file, output_dir="artifacts/imagenes_extraidas"):
+def procesar_pdf(pdf_file, artifacts_dir="artifacts"):
     """
     Procesa un PDF usando docling y extrae texto e imágenes
     Siempre convierte de PDF a MD con imágenes PNG
     
     Args:
         pdf_file (str): Ruta al archivo PDF (obligatorio)
-        output_dir (str): Directorio de salida para imágenes
+        artifacts_dir (str): Directorio principal de salida (se creará imagenes_extraidas dentro)
     
     Returns:
         bool: True si el procesamiento fue exitoso, False en caso contrario
@@ -29,7 +29,8 @@ def procesar_pdf(pdf_file, output_dir="artifacts/imagenes_extraidas"):
         print(f"❌ Error: El archivo {pdf_file} no existe")
         return False
     
-    # Crear directorio de salida si no existe (incluyendo directorios padres)
+    # Crear directorio de salida para imágenes
+    output_dir = os.path.join(artifacts_dir, "imagenes_extraidas")
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     
     # Comando docling con valores fijos: from pdf, to md, imágenes PNG
@@ -52,7 +53,7 @@ def procesar_pdf(pdf_file, output_dir="artifacts/imagenes_extraidas"):
         print(f"📁 Contenido guardado en: {output_dir}")
         
         # Renombrar imágenes y mover archivo de texto
-        renombrar_archivos_generados(output_dir)
+        renombrar_archivos_generados(output_dir, artifacts_dir)
         
         return True
         
@@ -65,13 +66,14 @@ def procesar_pdf(pdf_file, output_dir="artifacts/imagenes_extraidas"):
         print("Asegúrate de que docling esté instalado y disponible en el PATH")
         return False
 
-def renombrar_archivos_generados(output_dir):
+def renombrar_archivos_generados(output_dir, artifacts_dir):
     """
     Renombra las imágenes generadas a image1.png, image2.png, etc.
-    y mueve el archivo de texto a demo.md fuera de la carpeta
+    y mueve el archivo de texto a texto.md en el directorio artifacts
     
     Args:
         output_dir (str): Directorio donde están los archivos generados
+        artifacts_dir (str): Directorio principal de artifacts
     """
     try:
         # Buscar archivos de imagen PNG en el directorio (incluyendo subdirectorios)
@@ -108,14 +110,14 @@ def renombrar_archivos_generados(output_dir):
         
         if md_files:
             md_file = md_files[0]  # Tomar el primer archivo MD encontrado
-            new_md_path = "artifacts/texto.md"
+            new_md_path = os.path.join(artifacts_dir, "texto.md")
             
             # Crear directorio artifacts si no existe
-            Path("artifacts").mkdir(exist_ok=True)
+            Path(artifacts_dir).mkdir(exist_ok=True)
             
             # Mover el archivo de texto a la carpeta artifacts
             shutil.move(md_file, new_md_path)
-            print(f"📄 Archivo de texto movido: {os.path.basename(md_file)} → artifacts/texto.md")
+            print(f"📄 Archivo de texto movido: {os.path.basename(md_file)} → {new_md_path}")
         
         # Limpiar subdirectorios vacíos si existen
         for root, dirs, files in os.walk(output_dir, topdown=False):
@@ -139,31 +141,33 @@ def main():
     # Verificar que se proporcione el archivo PDF como parámetro obligatorio
     if len(sys.argv) < 2:
         print("❌ Error: Debes proporcionar el archivo PDF como parámetro")
-        print("Uso: python docling.py <archivo_pdf>")
+        print("Uso: python docling.py <archivo_pdf> [artifacts_dir]")
         print("Ejemplo: python docling.py documento.pdf")
+        print("         python docling.py documento.pdf artifacts_20240101_123456")
         print("")
         print("El script siempre convierte:")
         print("  - FROM: PDF")
         print("  - TO: MD (Markdown)")
         print("  - Imágenes: PNG (image1.png, image2.png, ...)")
-        print("  - Texto: artifacts/texto.md")
+        print("  - Texto: artifacts_dir/texto.md")
         sys.exit(1)
     
     pdf_file = sys.argv[1]
+    artifacts_dir = sys.argv[2] if len(sys.argv) > 2 else "artifacts"
     
     print(f"📄 Archivo PDF: {pdf_file}")
-    print(f"📂 Directorio de salida: artifacts/")
+    print(f"📂 Directorio de salida: {artifacts_dir}/")
     print(f"🔄 Conversión: PDF → MD con imágenes PNG")
     print("-" * 50)
     
     # Procesar el PDF
-    success = procesar_pdf(pdf_file, "artifacts/imagenes_extraidas")
+    success = procesar_pdf(pdf_file, artifacts_dir)
     
     if success:
         print("\n🎉 ¡Procesamiento completado!")
-        print(f"📁 Imágenes guardadas en: artifacts/imagenes_extraidas/")
-        print(f"📄 Archivo de texto: artifacts/texto.md")
-        print(f"🖼️  Imágenes: artifacts/imagenes_extraidas/image*.png")
+        print(f"📁 Imágenes guardadas en: {artifacts_dir}/imagenes_extraidas/")
+        print(f"📄 Archivo de texto: {artifacts_dir}/texto.md")
+        print(f"🖼️  Imágenes: {artifacts_dir}/imagenes_extraidas/image*.png")
     else:
         print("\n💥 Error en el procesamiento")
         sys.exit(1)

@@ -16,5 +16,5 @@ cuda_*
 logs/
 
 # Directorios de resultados
-artifacts/
+artifacts*/
 image_descriptions/
