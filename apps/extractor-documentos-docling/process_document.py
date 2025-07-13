@@ -730,8 +730,6 @@ class DocumentProcessor:
                         
                         enlaces_corregidos += 1
                         imagen_counter += 1
-                        
-                        logger.info(f"🔧 Enlace corregido: {match.group(0)} → {nuevo_enlace}")
             
             # Si no se encontraron patrones específicos, buscar cualquier mención de imagen
             if enlaces_corregidos == 0:
